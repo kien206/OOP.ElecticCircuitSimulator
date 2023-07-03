@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CircuitController">
+   <center>
+      <TabPane tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="tabParallel" text="Parrallel Circuit">
+                <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <top>
+                        <HBox prefHeight="47.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label text="Parallel Circuit">
+                                 <font>
+                                    <Font name="Bodoni MT" size="40.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </top>
+                     <center>
+                        <GridPane fx:id="gridParallel" BorderPane.alignment="CENTER">
+                          <columnConstraints>
+                            <ColumnConstraints fx:id="colParallelResistor" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints fx:id="colParallelCapacitor" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints fx:id="colParallelInductor" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label text="Resistor">
+                                       <font>
+                                          <Font name="System Bold" size="19.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox prefHeight="7.0" prefWidth="342.0">
+                                       <children>
+                                          <Label contentDisplay="CENTER" text="R1" textAlignment="CENTER">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tfResistor">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Label text="Ω">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <Button fx:id="btnAddResistorParallel" mnemonicParsing="false" onAction="#btnAddResistorParallelPressed" text="Add resistor">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="btnRemoveResistorParallel" mnemonicParsing="false" onAction="#btnRemoveResistorParallelPressed" text="Remove resistor" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <Label text="Capacitor">
+                                       <font>
+                                          <Font name="System Bold" size="19.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox prefHeight="0.0" prefWidth="342.0">
+                                       <children>
+                                          <Label text="C1">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tfCapacitor">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Label text="Ω">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <Button fx:id="btnAddCapacitorParallel" mnemonicParsing="false" onAction="#btnAddCapacitorParallelPressed" text="Add capacitor">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="btnRemoveCapacitorParallel" mnemonicParsing="false" onAction="#btnRemoveCapacitorParallelPressed" text="Remove capacitor" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+                                 <children>
+                                    <Label text="Inductor">
+                                       <font>
+                                          <Font name="System Bold" size="19.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox prefHeight="0.0" prefWidth="342.0">
+                                       <children>
+                                          <Label text="L1">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tfInductor">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Label text="Ω">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <Button fx:id="btnAddInductorParallel" mnemonicParsing="false" onAction="#btnAddInductorParallelPressed" text="Add inductor">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="btnRemoveInductorParallel" mnemonicParsing="false" onAction="#btnRemoveInductorParallelPressed" text="Remove inductor" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </GridPane>
+                     </center>
+                     <bottom>
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Create circuit diagram" BorderPane.alignment="CENTER" />
+                     </bottom>
+                  </BorderPane>
+               </content></Tab>
+
+          <Tab fx:id="tabSerial" text="Serial Circuit">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <top>
+                        <HBox prefHeight="47.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label text="Serial Circuit">
+                                 <font>
+                                    <Font name="Bodoni MT" size="40.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </top>
+                     <center>
+                        <GridPane fx:id="gridSerial" BorderPane.alignment="CENTER">
+                          <columnConstraints>
+                            <ColumnConstraints fx:id="colSerialResistor" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints fx:id="colSerialCapacitor" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints fx:id="colSerialInductor" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label text="Resistor">
+                                       <font>
+                                          <Font name="System Bold" size="19.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox prefHeight="7.0" prefWidth="342.0">
+                                       <children>
+                                          <Label contentDisplay="CENTER" text="R1" textAlignment="CENTER">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField>
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Label text="Ω">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <Button fx:id="btnAddResistorSerial" mnemonicParsing="false" onAction="#btnAddResistorSerialPressed" text="Add resistor">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="btnRemoveResistorSerial" mnemonicParsing="false" onAction="#btnRemoveResistorSerialPressed" text="Remove resistor" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <Label text="Capacitor">
+                                       <font>
+                                          <Font name="System Bold" size="19.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox prefHeight="0.0" prefWidth="342.0">
+                                       <children>
+                                          <Label text="C1">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField>
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Label text="Ω">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <Button fx:id="btnAddCapacitorSerial" mnemonicParsing="false" onAction="#btnAddCapacitorSerialPressed" text="Add capacitor">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="btnRemoveCapacitorSerial" mnemonicParsing="false" onAction="#btnRemoveCapacitorSerialPressed" text="Remove capacitor" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+                                 <children>
+                                    <Label text="Inductor">
+                                       <font>
+                                          <Font name="System Bold" size="19.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox prefHeight="0.0" prefWidth="342.0">
+                                       <children>
+                                          <Label text="L1">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField>
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Label text="Ω">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <Button fx:id="btnAddInductorSerial" mnemonicParsing="false" onAction="#btnAddInductorSerialPressed" text="Add inductor">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="btnRemoveInductorSerial" mnemonicParsing="false" onAction="#btnRemoveInductorSerialPressed" text="Remove inductor" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </GridPane>
+                     </center>
+                     <bottom>
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Create circuit diagram" BorderPane.alignment="CENTER" />
+                     </bottom>
+                  </BorderPane>
+               </content></Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
